@@ -1,7 +1,8 @@
 import fetch from "node-fetch";
 
 export default async function get_weather(query) {
-    let city = query.text.split(" ").splice(1)
+    let city = query.text.split(" ").splice(1).join(' ')
+
     let url = "http://api.openweathermap.org/data/2.5/weather?";
     let params = new URLSearchParams({
         q: city,
