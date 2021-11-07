@@ -1,0 +1,33 @@
+{
+  "name": "@multisocial-bot/tg",
+  "version": "2.0.1",
+  "description": "tg adapter of bot that works on all platforms, in all social networks and messengers",
+  "type": "module",
+  "contributors": [
+    {
+      "name": "Eduard Baturin",
+      "email": "trardone@gmail.com",
+      "url": "http://github.com/Trard"
+    },
+    {
+      "name": "Timofey Ulyanov",
+      "email": "kuthon@vk.com",
+      "url": "https://kuthon.ru"
+    },
+    {
+      "name": "Timofey Gelazoniya",
+      "email": "contact@zeldon.ru",
+      "url": "https://zeldon.ru"
+    }
+  ],
+  "dependencies": {
+    "node-fetch": "^3.0.0",
+    "telegraf": "^4.4.2"
+  },
+  "scripts": {
+    "start": "node -r dotenv/config.js src/index.js"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
