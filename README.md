@@ -1,0 +1,7 @@
+# Multisocial bot
+
+## Installing
+
+```
+
+```

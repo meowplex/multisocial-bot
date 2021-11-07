@@ -1,0 +1,32 @@
+{
+  "name": "multisocial-bot",
+  "version": "2.0.1",
+  "description": "bot that works on all platforms, in all social networks and messengers",
+  "repository": "https://github.com/meowplex/multisocial-bot",
+  "contributors": [
+    {
+      "name": "Eduard Baturin",
+      "email": "trardone@gmail.com",
+      "url": "http://github.com/Trard"
+    },
+    {
+      "name": "Timofey Ulyanov",
+      "email": "kuthon@vk.com",
+      "url": "https://kuthon.ru"
+    },
+    {
+      "name": "Timofey Gelazoniya",
+      "email": "contact@zeldon.ru",
+      "url": "https://zeldon.ru"
+    }
+  ],
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "scripts": {
+    "start-all": "npx lerna exec 'npm start'"
+  }
+}
