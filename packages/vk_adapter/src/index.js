@@ -6,12 +6,13 @@ const vk = new VK({
 });
 
 vk.updates.on("message_new", async (ctx) => {
-    const req = { text: ctx.text };
-    const res = await fetch("http://localhost:3000/command", {
-        method: "post",
-        body: JSON.stringify(req),
-        headers: { "Content-Type": "application/json" },
-    }).then((res) => res.json());
+    let params = new URLSearchParams({
+        text: ctx.text,
+    });
+    const res = await fetch("http://localhost:3000/command?" + params)
+    .then(
+        res => res.json()
+    );
     ctx.send(res.text);
 });
 
