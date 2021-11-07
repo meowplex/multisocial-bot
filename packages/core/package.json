@@ -19,11 +19,5 @@
       "email": "contact@zeldon.ru",
       "url": "https://zeldon.ru"
     }
-  ],
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "scripts": {
-    "start": "node src/index.js"
-  }
+  ]
 }
