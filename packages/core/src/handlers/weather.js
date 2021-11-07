@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 
 export default async function get_weather(query) {
-    let city = query.text.split(" ")[1]
+    let city = query.text.split(" ").splice(1)
     let url = "http://api.openweathermap.org/data/2.5/weather?";
     let params = new URLSearchParams({
         q: city,
@@ -22,6 +22,6 @@ Wind speed: ${weather.wind.speed} m/s`,
         };
     } else {
         let error = await res.json();
-        return { text: error.message };
+        return { text: `Error: ${error.message}` };
     }
 }
