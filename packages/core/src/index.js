@@ -10,7 +10,8 @@ core.set('trust proxy', 1)
 core.use(session({
     secret: process.env.SESSION_SECRET,
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: { maxAge: 1000 * 60 * 10 }
 }));
 core.use('/command', command)
 
