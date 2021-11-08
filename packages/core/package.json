@@ -1,34 +1,35 @@
 {
-    "name": "@multisocial-bot/core",
-    "version": "2.0.1",
-    "description": "core of bot that works on all platforms, in all social networks and messengers",
-    "type": "module",
-    "contributors": [
-      {
-        "name": "Eduard Baturin",
-        "email": "trardone@gmail.com",
-        "url": "http://github.com/Trard"
-      },
-      {
-        "name": "Timofey Ulyanov",
-        "email": "kuthon@vk.com",
-        "url": "https://kuthon.ru"
-      },
-      {
-        "name": "Timofey Gelazoniya",
-        "email": "contact@zeldon.ru",
-        "url": "https://zeldon.ru"
-      }
-    ],
-    "dependencies": {
-      "express": "^4.17.1",
-      "node-fetch": "^3.0.0"
+  "name": "@multisocial-bot/core",
+  "version": "2.0.1",
+  "description": "core of bot that works on all platforms, in all social networks and messengers",
+  "type": "module",
+  "contributors": [
+    {
+      "name": "Eduard Baturin",
+      "email": "trardone@gmail.com",
+      "url": "http://github.com/Trard"
     },
-    "scripts": {
-      "start": "node -r dotenv/config src/index.js"
+    {
+      "name": "Timofey Ulyanov",
+      "email": "kuthon@vk.com",
+      "url": "https://kuthon.ru"
     },
-    "devDependencies": {
-      "dotenv": "^10.0.0"
+    {
+      "name": "Timofey Gelazoniya",
+      "email": "contact@zeldon.ru",
+      "url": "https://zeldon.ru"
     }
+  ],
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "node-fetch": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node -r dotenv/config src/index.js"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
   }
-  
+}

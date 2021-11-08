@@ -1,4 +1,4 @@
-import { get_hello, get_weather } from "./handlers/index.js";
+import { get_hello, get_weather, get_views } from "./handlers/index.js";
 
 const scheme = [
     {
@@ -8,6 +8,10 @@ const scheme = [
     {
         trigger: /^weather/i,
         handler: get_weather
+    },
+    {
+        trigger: /^count/i,
+        handler: get_views
     }
 ];
 
