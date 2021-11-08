@@ -21,8 +21,10 @@ Temperature: ${weather.main.temp} ℃
 Feels like: ${weather.main.feels_like} ℃
 Wind speed: ${weather.wind.speed} m/s`,
         });
+        return;
     } else {
         let error = await weather_res.json();
         res.json({ text: `Error: ${error.message}` });
+        return;
     }
 }
