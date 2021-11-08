@@ -1,6 +1,6 @@
 import get_hello from "./hello.js";
 import get_weather from "./weather.js";
-import get_views from "./counter.js"
+import get_views from "./viewer.js"
 import calculate from "./calculate.js"
 
 export {
