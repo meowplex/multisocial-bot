@@ -1,3 +1,3 @@
-export default function get_hello() {
-    return { text: "Hello" };
+export default function get_hello(req, res) {
+    res.json({ text: "Hello" })
 }
