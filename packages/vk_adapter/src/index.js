@@ -29,7 +29,7 @@ vk.updates.on("message_new", async (ctx) => {
             res.headers.get('set-cookie')
         );
     }
-    
+    console.log(res)
     let json = await res.json();
     ctx.send(json.text);
 });

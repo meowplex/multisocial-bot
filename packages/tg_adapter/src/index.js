@@ -28,8 +28,10 @@ tg.on("text", async (ctx) => {
         );
     }
     
-    let json = await res.json();
-    ctx.reply(json.text);
+    if (res.ok) {
+        let json = await res.json();
+        ctx.reply(json.text);
+    }
 });
 
 tg.launch();
