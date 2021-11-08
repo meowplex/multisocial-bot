@@ -15,7 +15,7 @@ const scheme = [
         handler: get_weather
     },
     {
-        trigger: /^view/i,
+        trigger: /^view$/i,
         handler: get_views
     },
     {
