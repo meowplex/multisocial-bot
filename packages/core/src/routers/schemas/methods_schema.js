@@ -9,23 +9,23 @@ import {
 const schema = [
     {
         name: "hello",
-        method: get_hello,
+        handler: get_hello,
     },
     {
         name: "weather",
-        method: get_weather
+        handler: get_weather
     },
     {
         name: "view",
-        method: get_views
+        handler: get_views
     },
     {
         name: "calculate",
-        method: calculate
+        handler: calculate
     },
     {
         name: "authorize",
-        method: authorize
+        handler: authorize
     }
 ];
 

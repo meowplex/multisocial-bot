@@ -3,19 +3,19 @@ import methods_schema from "./methods_schema";
 const schema = [
     {
         trigger: /^hello/i,
-        handler: "methods/hello",
+        method: "methods/hello",
     },
     {
         trigger: /^weather/i,
-        handler: get_weather
+        method: get_weather
     },
     {
         trigger: /^view$/i,
-        handler: get_views
+        method: get_views
     },
     {
         trigger: /^calculate/i,
-        handler: calculate
+        method: calculate
     }
 ];
 
