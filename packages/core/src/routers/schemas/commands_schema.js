@@ -1,14 +1,9 @@
-import {
-    get_hello,
-    get_weather,
-    get_views,
-    calculate
-} from "./handlers/index.js";
+import methods_schema from "./methods_schema";
 
 const schema = [
     {
         trigger: /^hello/i,
-        handler: get_hello,
+        handler: "methods/hello",
     },
     {
         trigger: /^weather/i,

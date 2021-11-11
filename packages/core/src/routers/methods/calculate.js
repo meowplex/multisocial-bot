@@ -1,7 +1,7 @@
 import { evaluate } from 'mathjs'
 
 export default function calculate (req, res) {
-    let expression = req.query.text.split(" ").splice(1).join(" ");
+    let expression = req.query.text;
     try {
         let answer = evaluate(expression)
         res.json({
