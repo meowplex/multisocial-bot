@@ -28,7 +28,7 @@
     "node-fetch": "^3.0.0"
   },
   "scripts": {
-    "start": "node -r dotenv/config src/index.js"
+    "start": "node src/index.js"
   },
   "devDependencies": {
     "dotenv": "^10.0.0"

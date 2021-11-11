@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import config from "../../config.js"
 
 export default async function get_weather(req, res) {
     let city = req.query.text.split(" ").splice(1).join(" ");
@@ -6,7 +7,7 @@ export default async function get_weather(req, res) {
     let url = "http://api.openweathermap.org/data/2.5/weather?";
     let params = new URLSearchParams({
         q: city,
-        appid: process.env.WEATHER_TOKEN,
+        appid: config.weather_token,
         lang: "en",
         units: "metric",
     });

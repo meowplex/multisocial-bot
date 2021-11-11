@@ -27,7 +27,7 @@
     "telegraf": "^4.4.2"
   },
   "scripts": {
-    "start": "node -r dotenv/config.js src/index.js"
+    "start": "node src/index.js"
   },
   "devDependencies": {
     "dotenv": "^10.0.0"

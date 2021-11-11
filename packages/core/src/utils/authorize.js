@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import config from "../../config.js";
+
 import { user_model } from "./mongoose_models/user.js";
 
-mongoose.connect(process.env.MONGODB_LINK);
+mongoose.connect(config.mongodb_link);
 
 export default async function authorize(options) {
     const User = user_model;

@@ -27,7 +27,7 @@
     "vk-io": "^4.4.0"
   },
   "scripts": {
-    "start": "node -r dotenv/config.js src/index.js"
+    "start": "node src/index.js"
   },
   "devDependencies": {
     "dotenv": "^10.0.0"
