@@ -5,7 +5,7 @@ import {
     calculate
 } from "./handlers/index.js";
 
-const scheme = [
+const schema = [
     {
         trigger: /^hello/i,
         handler: get_hello,
@@ -24,4 +24,4 @@ const scheme = [
     }
 ];
 
-export default scheme;
+export default schema;

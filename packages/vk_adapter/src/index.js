@@ -17,7 +17,7 @@ vk.updates.on("message_new", async (ctx) => {
         text: ctx.text,
     });
 
-    const res = await fetch("http://localhost:3000/command?" + params, {
+    const res = await fetch(`${process.env.SERVER}/command?` + params, {
         headers: {
             cookie: await client.getAsync("vk" + ctx.senderId),
         },

@@ -1,10 +1,10 @@
 import { Router } from "express";
-import scheme from "../scheme.js";
+import schema from "../commands_schema.js";
 
 const router = Router();
 
 router.get("/", async function (req, res, next) {
-    for (let command of scheme) {
+    for (let command of schema) {
         if (req.query.text.match(command.trigger)) {
             await command.handler(req, res);
         }

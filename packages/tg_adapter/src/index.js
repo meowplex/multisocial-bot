@@ -15,7 +15,7 @@ tg.on("text", async (ctx) => {
         text: ctx.message.text,
     });
 
-    const res = await fetch("http://localhost:3000/command?" + params, {
+    const res = await fetch(`${process.env.SERVER}/command?` + params, {
         headers: {
             cookie: await client.getAsync("tg" + ctx.update.message.from.id),
         },
