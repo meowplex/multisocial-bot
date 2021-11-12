@@ -1,0 +1,36 @@
+{
+  "name": "@multisocial-bot/server",
+  "version": "2.0.1",
+  "description": "server of bot that works on all platforms, in all social networks and messengers",
+  "type": "module",
+  "contributors": [
+    {
+      "name": "Eduard Baturin",
+      "email": "trardone@gmail.com",
+      "url": "http://github.com/Trard"
+    },
+    {
+      "name": "Timofey Ulyanov",
+      "email": "kuthon@vk.com",
+      "url": "https://kuthon.ru"
+    },
+    {
+      "name": "Timofey Gelazoniya",
+      "email": "contact@zeldon.ru",
+      "url": "https://zeldon.ru"
+    }
+  ],
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mathjs": "^10.0.0",
+    "mongoose": "^6.0.12",
+    "node-fetch": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}

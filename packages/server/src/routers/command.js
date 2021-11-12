@@ -1,7 +1,7 @@
 import url from 'url'; 
 
 import { Router } from "express";
-import schema from "./schemas/commands_schema.js";
+import schema from "./schemas/commands_schema.js.js";
 
 const router = Router();
 
