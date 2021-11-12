@@ -2,25 +2,30 @@ import {
     get_hello,
     get_weather,
     get_views,
-    calculate
-} from "./handlers/index.js";
+    calculate,
+    authorize
+} from "../methods/index.js";
 
 const schema = [
     {
-        trigger: /^hello/i,
+        name: "hello",
         handler: get_hello,
     },
     {
-        trigger: /^weather/i,
+        name: "weather",
         handler: get_weather
     },
     {
-        trigger: /^view$/i,
+        name: "view",
         handler: get_views
     },
     {
-        trigger: /^calculate/i,
+        name: "calculate",
         handler: calculate
+    },
+    {
+        name: "authorize",
+        handler: authorize
     }
 ];
 

@@ -3,6 +3,7 @@ import session from 'express-session'
 import config from "../config.js"
 
 import command from './routers/command.js'
+import method from './routers/method.js'
 
 const core = express()
 const port = 3000
@@ -14,7 +15,9 @@ core.use(session({
     saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 10 }
 }));
+
 core.use('/command', command)
+core.use("/method", method)
 
 core.listen(port, () => {
     console.log(`Core listening at http://localhost:${port}`)
