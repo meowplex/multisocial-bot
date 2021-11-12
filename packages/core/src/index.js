@@ -2,7 +2,7 @@ import express from "express"
 import session from 'express-session'
 import config from "../config.js"
 
-//import command from './routers/command.js'
+import command from './routers/command.js'
 import method from './routers/method.js'
 
 const core = express()
@@ -16,7 +16,7 @@ core.use(session({
     cookie: { maxAge: 1000 * 60 * 10 }
 }));
 
-//core.use('/command', command)
+core.use('/command', command)
 core.use("/method", method)
 
 core.listen(port, () => {

@@ -1,21 +1,19 @@
-import methods_schema from "./methods_schema";
-
 const schema = [
     {
         trigger: /^hello/i,
-        method: "methods/hello",
+        method: "hello",
     },
     {
         trigger: /^weather/i,
-        method: get_weather
+        method: "weather"
     },
     {
         trigger: /^view$/i,
-        method: get_views
+        method: "view"
     },
     {
         trigger: /^calculate/i,
-        method: calculate
+        method: "calculate"
     }
 ];
 
