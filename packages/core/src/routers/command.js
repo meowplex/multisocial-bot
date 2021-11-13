@@ -7,7 +7,7 @@ const router = Router();
 
 router.get("/", async function (req, res, next) {
     for (let command of schema) {
-        if (req.query.text.test(command.trigger)) {
+        if (req.query.text.match(command.trigger)) {
 
             res.redirect(
                 _getRedirectUrl(command.method, req.query.text)
@@ -31,6 +31,7 @@ const _getRedirectUrl = (commandName, text) => {
         case "hello":
             break;
         case "calculate":
+            // смысл в том что в query идёт не текст сообщения а уже что надо
             options.expression = text.split(" ").splice(1).join(" ")
             break;
     }
