@@ -1,15 +1,7 @@
 const schema = [
     {
         trigger: /^hello/i,
-        method: "hello",
-    },
-    {
-        trigger: /^weather/i,
-        method: "weather"
-    },
-    {
-        trigger: /^view$/i,
-        method: "view"
+        method: "hello"
     },
     {
         trigger: /^calculate/i,

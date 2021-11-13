@@ -27,6 +27,6 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "start-all": "npx lerna exec 'npm start'"
+    "start-all": "npx lerna exec npm start"
   }
 }
