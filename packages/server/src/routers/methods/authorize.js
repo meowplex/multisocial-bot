@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import config from "../../../config.js";
 
-import { user_model } from "./models/user.js.js";
+import { user_model } from "./models/user.js";
 
 mongoose.connect(config.mongodb_link);
 
