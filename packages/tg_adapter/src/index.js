@@ -12,9 +12,7 @@ tg.on("text", async (ctx) => {
         text = Adapter.remove_trigger(text, command)
         let params = Adapter.get_params(text, command)
         let method_link = Adapter.get_method_link(config.server_link, command)
-        console.log(params)
         let answer = await Adapter.run(config.social_type, method_link, params)
-        console.log(answer)
         ctx.reply(answer.text)
     }
 });
