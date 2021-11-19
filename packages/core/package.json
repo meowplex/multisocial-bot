@@ -1,8 +1,12 @@
 {
   "name": "@multisocial-bot/core",
-  "version": "2.0.1",
+  "version": "0.0.4",
   "description": "core of bot that works on all platforms, in all social networks and messengers",
   "type": "module",
+  "files": [
+		"lib"
+	],
+  "main": "./lib/index.js",
   "contributors": [
     {
       "name": "Eduard Baturin",
@@ -21,14 +25,13 @@
     }
   ],
   "dependencies": {
+    "bluebird": "^3.7.2",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "mathjs": "^10.0.0",
     "mongoose": "^6.0.12",
-    "node-fetch": "^3.0.0"
-  },
-  "scripts": {
-    "start": "node src/index.js"
+    "node-fetch": "^3.0.0",
+    "redis": "^3.1.2"
   },
   "devDependencies": {
     "dotenv": "^10.0.0"

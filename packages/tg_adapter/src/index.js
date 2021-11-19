@@ -1,37 +1,18 @@
 import { Telegraf } from "telegraf";
-import fetch from "node-fetch";
-import redis from "redis";
-import bluebird from "bluebird";
-import config from "../config.js"
-
-const { promisifyAll } = bluebird
-
-promisifyAll(redis);
+import config from "../config.js";
+import { Adapter } from "@multisocial-bot/core";
 
 const tg = new Telegraf(config.token);
-const client = redis.createClient();
 
 tg.on("text", async (ctx) => {
-    let params = new URLSearchParams({
-        text: ctx.message.text,
-    });
-
-    const res = await fetch(`${config.server_link}/command?` + params, {
-        headers: {
-            cookie: await client.getAsync("tg" + ctx.update.message.from.id),
-        },
-    });
-
-    if (res.headers.get('set-cookie')) {
-        await client.setAsync(
-            "tg" + ctx.update.message.from.id,
-            res.headers.get('set-cookie')
-        );
-    }
-    
-    if (res.ok) {
-        let json = await res.json();
-        ctx.reply(json.text);
+    let text = ctx.message.text;
+    let command = Adapter.get_command(text);
+    if (command) {
+        text = Adapter.remove_trigger(text, command);
+        let params = Adapter.get_params(text, command);
+        let method_link = Adapter.get_method_link(config.server_link, command);
+        let answer = await Adapter.run(config.social_type, method_link, params);
+        ctx.reply(answer.text);
     }
 });
 

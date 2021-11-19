@@ -1,8 +1,8 @@
 {
-  "name": "multisocial-bot-monorepo",
+  "name": "@multisocial-bot/server",
   "version": "2.0.1",
-  "description": "bot that works on all platforms, in all social networks and messengers",
-  "repository": "https://github.com/meowplex/multisocial-bot",
+  "description": "server of bot that works on all platforms, in all social networks and messengers",
+  "type": "module",
   "contributors": [
     {
       "name": "Eduard Baturin",
@@ -20,13 +20,17 @@
       "url": "https://zeldon.ru"
     }
   ],
-  "license": "MIT",
-  "private": true,
-  "type": "module",
-  "devDependencies": {
-    "lerna": "^4.0.0"
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mathjs": "^10.0.0",
+    "mongoose": "^6.0.12",
+    "node-fetch": "^3.0.0"
   },
   "scripts": {
-    "start-all": "npx lerna exec --ignore @multisocial-bot/core 'npm start'"
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
   }
 }

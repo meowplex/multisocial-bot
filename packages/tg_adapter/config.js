@@ -4,5 +4,6 @@ dotenv.config()
 
 export default {
     token: process.env.TG_TOKEN,
-    server_link: process.env.SERVER_LINK
+    server_link: process.env.SERVER_LINK,
+    social_type: "tg"
 }

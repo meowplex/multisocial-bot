@@ -1,38 +1,20 @@
 import { VK } from "vk-io";
-import fetch from "node-fetch";
-import redis from "redis";
-import bluebird from "bluebird";
-import config from "../config.js"
-const { promisifyAll } = bluebird
-
-promisifyAll(redis);
+import config from "../config.js";
+import { Adapter } from "@multisocial-bot/core";
 
 const vk = new VK({
     token: config.token,
 });
-const client = redis.createClient();
 
 vk.updates.on("message_new", async (ctx) => {
-     let params = new URLSearchParams({
-        text: ctx.text,
-    });
-
-    const res = await fetch(`${config.server_link}/command?` + params, {
-        headers: {
-            cookie: await client.getAsync("vk" + ctx.senderId),
-        },
-    });
-
-    if (res.headers.get('set-cookie')) {
-        await client.setAsync(
-            "vk" + ctx.senderId,
-            res.headers.get('set-cookie')
-        );
-    }
-    
-    if (res.ok) {
-        let json = await res.json();
-        ctx.send(json.text);
+    let text = ctx.text;
+    let command = Adapter.get_command(text);
+    if (command) {
+        text = Adapter.remove_trigger(text, command);
+        let params = Adapter.get_params(text, command);
+        let method_link = Adapter.get_method_link(config.server_link, command);
+        let answer = await Adapter.run(config.social_type, method_link, params);
+        ctx.send(answer.text);
     }
 });
 
