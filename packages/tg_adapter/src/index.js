@@ -11,7 +11,9 @@ tg.on("text", async (ctx) => {
         text: ctx.message.text
     }
     let answer = await tg_adapter.get_answer(cctx, config.server_link, config.social_type)
-    ctx.reply(answer.text);
+    if (answer) {
+        ctx.reply(answer.text);
+    }
 });
 
 tg.launch();

@@ -13,7 +13,10 @@ vk.updates.on("message_new", async (ctx) => {
         text: ctx.text
     }
     let answer = await vk_adapter.get_answer(cctx, config.server_link, config.social_type)
-    ctx.send(answer.text);
+    if (answer) {
+        ctx.send(answer.text);
+    }
+    
 });
 
 vk.updates.start().catch(console.error);
