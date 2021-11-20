@@ -1,6 +1,6 @@
 {
   "name": "@multisocial-bot/core",
-  "version": "0.0.4",
+  "version": "0.0.11",
   "description": "core of bot that works on all platforms, in all social networks and messengers",
   "type": "module",
   "files": [

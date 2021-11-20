@@ -4,16 +4,14 @@ import { Adapter } from "@multisocial-bot/core";
 
 const tg = new Telegraf(config.token);
 
+const tg_adapter = new Adapter
+
 tg.on("text", async (ctx) => {
-    let text = ctx.message.text;
-    let command = Adapter.get_command(text);
-    if (command) {
-        text = Adapter.remove_trigger(text, command);
-        let params = Adapter.get_params(text, command);
-        let method_link = Adapter.get_method_link(config.server_link, command);
-        let answer = await Adapter.run(config.social_type, method_link, params);
-        ctx.reply(answer.text);
+    let cctx = {
+        text: ctx.message.text
     }
+    let answer = await tg_adapter.get_answer(cctx, config.server_link, config.social_type)
+    ctx.reply(answer.text);
 });
 
 tg.launch();

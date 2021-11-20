@@ -21,7 +21,7 @@
     }
   ],
   "dependencies": {
-    "@multisocial-bot/core": "^0.0.4",
+    "@multisocial-bot/core": "^0.0.11",
     "@vk-io/hear": "^1.1.0",
     "bluebird": "^3.7.2",
     "node-fetch": "^3.0.0",

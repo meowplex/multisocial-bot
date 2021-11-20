@@ -6,16 +6,14 @@ const vk = new VK({
     token: config.token,
 });
 
+const vk_adapter = new Adapter
+
 vk.updates.on("message_new", async (ctx) => {
-    let text = ctx.text;
-    let command = Adapter.get_command(text);
-    if (command) {
-        text = Adapter.remove_trigger(text, command);
-        let params = Adapter.get_params(text, command);
-        let method_link = Adapter.get_method_link(config.server_link, command);
-        let answer = await Adapter.run(config.social_type, method_link, params);
-        ctx.send(answer.text);
+    let cctx = {
+        text: ctx.text
     }
+    let answer = await vk_adapter.get_answer(cctx, config.server_link, config.social_type)
+    ctx.send(answer.text);
 });
 
 vk.updates.start().catch(console.error);

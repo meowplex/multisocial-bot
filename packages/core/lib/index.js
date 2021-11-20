@@ -1,3 +1,3 @@
-import Adapter from "./adapter/index.js";
+import { Adapter } from "./adapter/index.js";
 
 export { Adapter };
